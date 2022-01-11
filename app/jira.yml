@@ -35,7 +35,8 @@ settings:
     browse_boards: 1
     standalone_extension: 0 # By default disabled
     # Custom dataset section.
-    custom_dataset_query:          # Write JQL query to add JQL output to the app/datasets/jira/custom-issues.csv, e.g. "summary ~ 'AppIssue*'"
+    # Write JQL query to add JQL output to the app/datasets/jira/custom-issues.csv, e.g. "summary ~ 'AppIssue*'"
+    custom_dataset_query: issueLinkType in (blocks, "is blocked by") and project = truncatus
 services:
   - module: shellexec
     prepare:
